@@ -32,5 +32,5 @@ end
 if (s == 0) && ~isempty(strfind(lower(drive_type), 'removable drive'));
     display(['SD drive selected is drive ' SD_drive ' which is a removable drive']);
 else
-    SD_drive = userInputSDDRive();
+    SD_drive = userInputSDDrive();
 end

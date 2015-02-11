@@ -157,7 +157,7 @@ if (SD_drive ~= -1)
     
     % step 3 - use dd.exe to burn the just created image - temp/SD.img
     if length(dir([SD_drive, '/*.pat']))
-        dos(['del ' SD_drive '/*.pat']);
+        dos(['rm ' SD_drive '/*.pat']);
     end
 
      results = dos(['cp -r ' temp_path '/*.pat ' SD_drive '/']);  
@@ -171,7 +171,7 @@ if (SD_drive ~= -1)
     
     SD.pattern = handles.SD;
     save([controller_path '/SD'], 'SD');
-    save([SD_drive ':/SD'], 'SD');
+    save([SD_drive '/SD'], 'SD');
     %cannot update handles.PC fields :num_patterns, pattern_x_size,
     %pattern_y_size in PControl.m
     warndlg('You have sucessfully loaded the pattern to the SD card. Please restart PControl to update pattern parameters!','Restart PControl Dialog')

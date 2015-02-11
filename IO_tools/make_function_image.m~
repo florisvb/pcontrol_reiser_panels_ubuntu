@@ -9,12 +9,12 @@ SD.numfunc = num_functions;
 
 %clean the temp folder
 panel_control_paths;
-dos(['rm -r ' temp_path '/*.fun']); 
+dos(['del /Q ' temp_path '\*.fun']); 
 pos_func_counter = 0;
 vel_func_counter = 0;
 
 for j = 1:num_functions
-    load([file_list(j).PathName '/' file_list(j).FileName]);
+    load([file_list(j).PathName '\' file_list(j).FileName]);
     
     Header_block(1:4) = dec2char(length(func)*2, 4);     %each function datum is stored in two bytes in the SD card
     Header_block(5) = length(file_list(j).FileName);
@@ -62,11 +62,11 @@ for j = 1:num_functions
         function_Data = signed_16Bit_to_char(func);     
         
     else
-        disp('The function name %s is incorrect/n',file_list(j).FileName);
+        disp('The function name %s is incorrect\n',file_list(j).FileName);
     end
     
     Data_to_write = [Header_block function_Data]; 
-    fid = fopen([temp_path '/' funcFileName] , 'w');
+    fid = fopen([temp_path '\' funcFileName] , 'w');
     fwrite(fid, Data_to_write(:),'uchar');
     fclose(fid);
     display([num2str(j) ' of ' num2str(num_functions) ' functions written to temporary folder', funcFileName, ', of size ' num2str(size(Data_to_write,2)) ' bytes']);

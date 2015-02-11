@@ -11,15 +11,6 @@ serial ports
 
 The rule assigns a symbolic link '/dev/ttyS101' to the controller. When starting PControl, enter '101' as the serial port number
 
-SD media
-===
-
-Might need to format card as Fat32 using command:
-??
-
-When burning to SD card from PControl, enter the drive number as something like: "/media/1F90-CF40" (see what drives are under /media to find the right number, if it does not have "CF" in it, it may not be formatted"
-
-
 Running Pcontrol
 ===
 

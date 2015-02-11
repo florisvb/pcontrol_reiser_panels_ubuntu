@@ -30,7 +30,7 @@ function Pattern_Player_OpeningFcn(hObject, eventdata, handles, varargin)
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to Pattern_Player (see VARARGIN)
 
-[I, map] = imread('Please_Load.bmp', 'BMP');
+[I, map] = imread('Please_load.bmp', 'BMP');
 axes(handles.axes1); 
 colormap(map);
 image(I);

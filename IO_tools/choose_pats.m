@@ -157,12 +157,12 @@ if (SD_drive ~= -1)
     
     % step 3 - use dd.exe to burn the just created image - temp/SD.img
     if length(dir([SD_drive, '/*.pat']))
-        dos(['del ' SD_drive '/*.pat']);
+        dos(['rm ' SD_drive '/*.pat']);
     end
 
      results = dos(['cp -r ' temp_path '/*.pat ' SD_drive '/']);  
-     %['dd if=' temp_path '\SD.img of=\\.\' SD_drive ': bs=1k &']
-    %dos(['dd if=' temp_path '\SD.img of=\\.\' SD_drive ': bs=1k &']);
+     %['dd if=' temp_path '/SD.img of=//./' SD_drive ': bs=1k &']
+    %dos(['dd if=' temp_path '/SD.img of=//./' SD_drive ': bs=1k &']);
 
     if results
         errordlg('Failed to use the dos copy command.');
