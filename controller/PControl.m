@@ -509,7 +509,8 @@ function x_loop_menu_Callback(hObject, eventdata, handles)
 handles.PC.x_mode = get(hObject,'Value') - 1 ;
 guidata(hObject, handles);
 Panel_com('set_mode', [handles.PC.x_mode handles.PC.y_mode]);
-
+disp(handles.PC.x_mode);
+disp(handles.PC.y_mode);
 
 % --- Executes during object creation, after setting all properties.
 function y_loop_menu_CreateFcn(hObject, eventdata, handles)
