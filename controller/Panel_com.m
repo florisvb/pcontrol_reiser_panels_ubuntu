@@ -5,7 +5,12 @@ function Panel_com(command, argument)
 %  ARGUMENTS MUST BE ROW VECTORS
 % Acceptable panel commands are:
 disp(command);
-disp(argument);
+try
+    disp(argument);
+catch
+    disp(' ');
+end
+
 disp(' ');
 
 switch lower(command)
